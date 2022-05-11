@@ -1,32 +1,30 @@
-const ENDPOINT = '/bookings';
-const HOST_URL = 'http://127.0.0.1:3001';
-const API_URL = `${HOST_URL}${ENDPOINT}`;
+import APPOINTMENTS_ENDPOINT from '../endpoints';
 
-const LOAD_GREETING = 'greetings/LOAD_GREETING';
+const LOAD_APPOINTMENT = 'appointments/LOAD_APPOINTMENT';
 
 const initialState = {};
 
-export const loadGreeting = (payload) => ({
-  type: LOAD_GREETING,
+export const loadAppointment = (payload) => ({
+  type: LOAD_APPOINTMENT,
   payload,
 });
 
-export const getGreetingFromApi = async () => {
-  const response = await fetch(API_URL);
-  const greeting = await response.json();
-  return greeting;
+export const getAppointmentFromApi = async () => {
+  const response = await fetch(APPOINTMENTS_ENDPOINT);
+  const appointment = await response.json();
+  return appointment;
 };
 
-export const getGreeting = () => async (dispatch) => {
-  const greetingMessage = getGreetingFromApi();
-  greetingMessage.then((message) => {
-    dispatch(loadGreeting({ ...message }));
+export const getAppointment = () => async (dispatch) => {
+  const appointments = getAppointmentFromApi();
+  appointments.then((appointment) => {
+    dispatch(loadAppointment({ ...appointment }));
   });
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_GREETING:
+    case LOAD_APPOINTMENT:
       return action.payload;
     default:
       return state;

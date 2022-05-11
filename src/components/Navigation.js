@@ -26,16 +26,18 @@ const Navigation = () => {
   ];
 
   return (
-    <aside className="w-64" aria-label="Sidebar">
-      <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+    <aside className="min-h-screen" aria-label="Sidebar">
+      <div className="overflow-y-auto align-middle">
         <ul className="space-y-2">
           {links.map((link) => (
             <li key={link.id}>
               <NavLink
                 to={link.path}
-                className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-lime-500 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-base font-normal text-gray-900 dark:text-white hover:bg-lime-500 hover:text-white dark:hover:bg-gray-700"
               >
-                <span className="ml-3">{link.text}</span>
+                <span className="ml-3 font-semibold uppercase">
+                  {link.text}
+                </span>
               </NavLink>
             </li>
           ))}
