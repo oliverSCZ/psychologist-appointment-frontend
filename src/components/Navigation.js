@@ -33,7 +33,7 @@ const Navigation = () => {
             <li key={link.id}>
               <NavLink
                 to={link.path}
-                className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-lime-500 dark:hover:bg-gray-700"
               >
                 <span className="ml-3">{link.text}</span>
               </NavLink>
