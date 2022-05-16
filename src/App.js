@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import MyAppointments from './components/MyAppointments';
+import PsychologistsList from './components/PsychologistsList';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </div>
         <div className="col-span-4">
           <Routes>
+            <Route path="/" element={<PsychologistsList />} />
             <Route path="/my-appointments" element={<MyAppointments />} />
           </Routes>
         </div>
