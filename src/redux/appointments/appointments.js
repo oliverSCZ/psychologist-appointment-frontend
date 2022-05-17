@@ -1,4 +1,4 @@
-import APPOINTMENTS_ENDPOINT from '../endpoints';
+import APPOINTMENTS_ENDPOINT from '../../endpoints';
 
 const LOAD_APPOINTMENT = 'appointments/LOAD_APPOINTMENT';
 
