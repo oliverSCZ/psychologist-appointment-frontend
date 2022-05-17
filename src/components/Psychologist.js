@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Psychologist = () => (
+const Psychologist = ({ psychologist }) => (
   <div className="grid-cols-3 gap-4 flex items-center">
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-2">
       <div className="flex flex-col items-center pb-10">
@@ -10,10 +10,10 @@ const Psychologist = () => (
           alt="Bonnie"
         />
         <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-          Martha Chambula
+          {psychologist.name}
         </h5>
         <span className="text-center text-sm text-gray-500 dark:text-gray-400">
-          Specialises in child counselling and marriages
+          {psychologist.area_of_specialty}
         </span>
       </div>
     </div>

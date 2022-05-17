@@ -2,7 +2,7 @@ import { PSYCHOLOGISTS_ENDPOINT } from '../../endpoints';
 
 const LOAD_PSYCHOLOGISTS = 'psychologists/LOAD_PSYCHOLOGISTS';
 
-const initialState = {};
+const initialState = [];
 
 export const loadPsychologists = (payload) => ({
   type: LOAD_PSYCHOLOGISTS,
@@ -25,7 +25,7 @@ export const getPsychologists = () => async (dispatch) => {
 const psychologistsReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PSYCHOLOGISTS:
-      return action.payload;
+      return [...state, action.payload];
     default:
       return state;
   }
