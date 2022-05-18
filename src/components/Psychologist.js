@@ -11,6 +11,7 @@ const Psychologist = ({ id, name, specialty }) => (
           alt="Bonnie"
         />
         <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+          {id}
           {name}
         </h5>
         <span className="text-center text-sm text-gray-500 dark:text-gray-400">
