@@ -18,7 +18,9 @@ const getPyschologistsFromApi = async () => {
 export const getPsychologists = () => async (dispatch) => {
   const psychologists = getPyschologistsFromApi();
   psychologists.then((psychologist) => {
-    dispatch(loadPsychologists({ ...psychologist }));
+    psychologist.forEach((psychologist) => {
+      dispatch(loadPsychologists(psychologist));
+    });
   });
 };
 

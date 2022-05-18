@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   const psychologistSelector = useSelector(
-    (state) => state.psychologistsReducer
+    (state) => state.psychologistsReducer,
   );
 
   const deletePsychologist = (psychologistId) => {
@@ -31,7 +31,7 @@ function App() {
       key={psychologist.id}
       id={psychologist.id}
       name={psychologist.name}
-      areaOfSpecialty={psychologist.area_of_specialty}
+      specialty={psychologist.area_of_specialty}
       deletePyschologist={() => deletePsychologist(psychologist.id)}
     />
   ));

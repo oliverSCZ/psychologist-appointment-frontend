@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Psychologist = ({ psychologist }) => (
+const Psychologist = ({ id, name, specialty }) => (
   <div className="grid-cols-3 gap-4 flex items-center">
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-2">
       <div className="flex flex-col items-center pb-10">
@@ -10,14 +11,20 @@ const Psychologist = ({ psychologist }) => (
           alt="Bonnie"
         />
         <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-          {psychologist.name}
+          {name}
         </h5>
         <span className="text-center text-sm text-gray-500 dark:text-gray-400">
-          {psychologist.area_of_specialty}
+          {specialty}
         </span>
       </div>
     </div>
   </div>
 );
+
+Psychologist.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  specialty: PropTypes.string.isRequired,
+};
 
 export default Psychologist;
