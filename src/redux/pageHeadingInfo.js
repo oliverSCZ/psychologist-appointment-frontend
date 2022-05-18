@@ -1,4 +1,4 @@
-const UPDATE_HEADER_INFO = 'psychologists/UPDATE_HEADER_INFO';
+const UPDATE_PAGE_INFO = 'UPDATE_PAGE_INFO';
 
 const initialState = {
   heading: 'OUR PSYCHOLOGISTS',
@@ -6,16 +6,15 @@ const initialState = {
 };
 
 export const updateHeader = (payload) => ({
-  type: UPDATE_HEADER_INFO,
+  type: UPDATE_PAGE_INFO,
   payload,
 });
 
 const headerInfoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_HEADER_INFO: {
+    case UPDATE_PAGE_INFO: {
       return {
-        ...state,
-        pageHeaderInfo: action.payload,
+        ...action.payload,
       };
     }
     default:

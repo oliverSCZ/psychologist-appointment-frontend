@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const psychologistSelector = useSelector(
-    (state) => state.psychologistsReducer
+    (state) => state.psychologistsReducer,
   );
 
   const headerInforSelector = useSelector((state) => state.headerInfoReducer);
