@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Navigation from './components/Navigation';
 import MyAppointments from './components/MyAppointments';
-import PsychologistsList from './components/PsychologistsList';
+import PsychologistsList from './components/Psychologists/PsychologistsList';
+import PsychologistDetails from './components/Psychologists/PsychologistDetails';
 import { getPsychologists } from './redux/psychologists/psychologists';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
   const psychologistSelector = useSelector(
     (state) => state.psychologistsReducer,
   );
+
+  const headerInforSelector = useSelector((state) => state.headerInfoReducer);
 
   const deletePsychologist = (psychologistId) => {
     const psychologist = {
@@ -46,10 +49,10 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:text-center">
               <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl tracking-widest">
-                OUR PSYCHOLOGISTS
+                {headerInforSelector.heading}
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                Ready to get you the help you need.
+                {headerInforSelector.subHeading}
               </p>
             </div>
             <div className="mt-10">
@@ -57,6 +60,10 @@ function App() {
                 <Routes>
                   <Route path="/" element={psychologists} />
                   <Route path="/my-appointments" element={<MyAppointments />} />
+                  <Route
+                    path="/psychologist/:id"
+                    element={<PsychologistDetails />}
+                  />
                 </Routes>
               </dl>
             </div>
