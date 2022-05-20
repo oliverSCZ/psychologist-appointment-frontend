@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addPsychologists } from '../../redux/psychologists/psychologists';
+import { savePsychologistToApi } from '../../redux/psychologists/psychologists';
 
 const PsychologistsNew = () => {
   const [name, setName] = useState('');
@@ -22,7 +22,7 @@ const PsychologistsNew = () => {
 
     // dispatch an action and pass it the newBook object (your action's payload)
     // dispatch(addBook(newBook));
-    dispatch(addPsychologists(newPsychologist));
+    dispatch(savePsychologistToApi(newPsychologist));
   };
 
   return (
@@ -34,17 +34,13 @@ const PsychologistsNew = () => {
             <input
               type="text"
               placeholder="Name"
-              className="form-control"
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="col-md-4">
-            <select
-              name="gender"
-              className="form-control"
-              onChange={(e) => setGender(e.target.value)}>
+            <select name="gender" onChange={(e) => setGender(e.target.value)}>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -53,7 +49,6 @@ const PsychologistsNew = () => {
             <input
               type="text"
               placeholder="Email"
-              className="form-control"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -63,10 +58,18 @@ const PsychologistsNew = () => {
             <input
               type="textarea"
               placeholder="Area of specialty"
-              className="form-control"
               name="areaOfSpecialty"
               value={areaOfSpecialty}
               onChange={(e) => setAreaOfSpecialty(e.target.value)}
+            />
+          </div>
+          <div className="col-md-6">
+            <input
+              type="text"
+              placeholder="Image Url"
+              name="image"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
             />
           </div>
           <div className="col-md-2">
