@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import MyAppointments from './components/MyAppointments';
 import PsychologistsList from './components/Psychologists/PsychologistsList';
 import PsychologistDetails from './components/Psychologists/PsychologistDetails';
+import PsychologistsNew from './components/Psychologists/PsychologistsNew';
 import { getPsychologists } from './redux/psychologists/psychologists';
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
       key={psychologist.id}
       id={psychologist.id}
       name={psychologist.name}
-      specialty={psychologist.area_of_specialty}
+      area_of_specialty={psychologist.area_of_specialty}
       deletePyschologist={() => deletePsychologist(psychologist.id)}
     />
   ));
@@ -63,6 +64,10 @@ function App() {
                   <Route
                     path="/psychologist/:id"
                     element={<PsychologistDetails />}
+                  />
+                  <Route
+                    path="/add-psychologists"
+                    element={<PsychologistsNew />}
                   />
                 </Routes>
               </dl>

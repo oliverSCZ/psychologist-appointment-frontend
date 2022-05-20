@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const PsychologistsList = ({ id, name, specialty }) => (
+const PsychologistsList = ({ id, name, area_of_specialty: specialty }) => (
   <div className="grid-cols-3 gap-4 flex items-center">
     <Link to={`/psychologist/${id}`}>
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-2">
@@ -27,7 +27,7 @@ const PsychologistsList = ({ id, name, specialty }) => (
 PsychologistsList.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  specialty: PropTypes.string.isRequired,
+  area_of_specialty: PropTypes.string.isRequired,
 };
 
 export default PsychologistsList;
