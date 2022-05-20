@@ -33,3 +33,21 @@ code {
 .container-fluid {
   height: 100vh;
 }
+
+.nav-ul {
+  width: 100%;
+  color: #fff;
+}
+
+.nav-links {
+  background-color: #fff !important;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-links :hover {
+  background-color: #97bf10 !important;
+  color: #fff;
+  width: 100%;
+}

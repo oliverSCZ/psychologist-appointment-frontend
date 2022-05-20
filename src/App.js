@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   const psychologistSelector = useSelector(
-    (state) => state.psychologistsReducer
+    (state) => state.psychologistsReducer,
   );
 
   const headerInforSelector = useSelector((state) => state.headerInfoReducer);
@@ -47,18 +47,25 @@ function App() {
           <Navigation />
         </div>
         <div className="col-md-9">
-          <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            {headerInforSelector.heading}
-            {headerInforSelector.subHeading}
-            <Routes>
-              <Route path="/" element={psychologists} />
-              <Route path="/my-appointments" element={<MyAppointments />} />
-              <Route
-                path="/psychologist/:id"
-                element={<PsychologistDetails />}
-              />
-              <Route path="/add-psychologists" element={<PsychologistsNew />} />
-            </Routes>
+          <div className="d-flex flex-column g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div className="justify-center border">
+              <p className="page-title">{headerInforSelector.heading}</p>
+              <p className="sub-title">{headerInforSelector.subHeading}</p>
+            </div>
+            <div className="d-flex flex-row">
+              <Routes>
+                <Route path="/" element={psychologists} />
+                <Route path="/my-appointments" element={<MyAppointments />} />
+                <Route
+                  path="/psychologist/:id"
+                  element={<PsychologistDetails />}
+                />
+                <Route
+                  path="/add-psychologists"
+                  element={<PsychologistsNew />}
+                />
+              </Routes>
+            </div>
           </div>
         </div>
       </div>
