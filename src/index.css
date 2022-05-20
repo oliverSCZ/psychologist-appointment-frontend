@@ -29,3 +29,7 @@ code {
     'Courier New',
     monospace;
 }
+
+.container-fluid {
+  height: 100vh;
+}

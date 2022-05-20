@@ -43,40 +43,22 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-md-3">
           <Navigation />
         </div>
-        <div className="col-md-10">
-          <div className="py-12 mt-5 w-75 bg-white border rounded drop-shadow-lg mx-auto">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="lg:text-center">
-                <p className="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl tracking-widest">
-                  {headerInforSelector.heading}
-                </p>
-                <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                  {headerInforSelector.subHeading}
-                </p>
-              </div>
-              <div className="mt-10">
-                <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                  <Routes>
-                    <Route path="/" element={psychologists} />
-                    <Route
-                      path="/my-appointments"
-                      element={<MyAppointments />}
-                    />
-                    <Route
-                      path="/psychologist/:id"
-                      element={<PsychologistDetails />}
-                    />
-                    <Route
-                      path="/add-psychologists"
-                      element={<PsychologistsNew />}
-                    />
-                  </Routes>
-                </dl>
-              </div>
-            </div>
+        <div className="col-md-9">
+          <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            {headerInforSelector.heading}
+            {headerInforSelector.subHeading}
+            <Routes>
+              <Route path="/" element={psychologists} />
+              <Route path="/my-appointments" element={<MyAppointments />} />
+              <Route
+                path="/psychologist/:id"
+                element={<PsychologistDetails />}
+              />
+              <Route path="/add-psychologists" element={<PsychologistsNew />} />
+            </Routes>
           </div>
         </div>
       </div>

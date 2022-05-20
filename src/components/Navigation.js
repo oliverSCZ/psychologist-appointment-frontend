@@ -25,14 +25,15 @@ const Navigation = () => {
     },
   ];
 
-  const navWidth = {
-    width: 380,
+  const navStyle = {
+    width: 300,
+    height: '100vh',
   };
 
   return (
     <div
-      className="d-flex flex-column space-between align-items-stretch flex-shrink-0 bg-white border h-100 d-inline-block"
-      style={navWidth}>
+      className="d-flex flex-column justify-content-between align-items-stretch flex-shrink-0 bg-white border gap-3 d-inline-block pb-2 "
+      style={navStyle}>
       <a
         href="/"
         className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
@@ -50,7 +51,7 @@ const Navigation = () => {
           </NavLink>
         ))}
       </div>
-      <div>
+      <div className="d-flex flex-row gap-3 justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
