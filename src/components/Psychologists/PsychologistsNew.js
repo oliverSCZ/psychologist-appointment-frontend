@@ -17,7 +17,7 @@ const PsychologistsNew = () => {
       email,
       gender,
       image,
-      areaOfSpecialty,
+      area_of_specialty: areaOfSpecialty,
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
@@ -76,7 +76,8 @@ const PsychologistsNew = () => {
             <button
               type="button"
               className="btn btn-primary btn-update-progress"
-              onClick={addNewPsychologist}>
+              onClick={addNewPsychologist}
+            >
               Submit
             </button>
           </div>

@@ -40,7 +40,9 @@ export const savePsychologistToApi = (psychologist) => async (dispatch) => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-  }).then(dispatch(addPsychologists(psychologist)));
+  })
+    .then((response) => response.json())
+    .then((data) => dispatch(addPsychologists(data)));
 };
 
 const psychologistsReducer = (state = initialState, action) => {

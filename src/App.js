@@ -35,7 +35,7 @@ function App() {
       key={psychologist.id}
       id={psychologist.id}
       name={psychologist.name}
-      specialty={psychologist.area_of_specialty}
+      area_of_specialty={psychologist.area_of_specialty}
       deletePyschologist={() => deletePsychologist(psychologist.id)}
     />
   ));
