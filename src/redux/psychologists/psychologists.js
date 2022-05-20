@@ -1,11 +1,17 @@
 import { PSYCHOLOGISTS_ENDPOINT } from '../../endpoints';
 
 const LOAD_PSYCHOLOGISTS = 'psychologists/LOAD_PSYCHOLOGISTS';
+const ADD_PSYCHOLOGIST = 'psychologists/ADD_PSYCHOLOGIST';
 
 const initialState = [];
 
 export const loadPsychologists = (payload) => ({
   type: LOAD_PSYCHOLOGISTS,
+  payload,
+});
+
+export const addPsychologists = (payload) => ({
+  type: ADD_PSYCHOLOGIST,
   payload,
 });
 
